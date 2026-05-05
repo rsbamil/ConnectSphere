@@ -20,7 +20,7 @@ COPY ["src/ConnectSphere.Follow.API/ConnectSphere.Follow.API.csproj", "src/Conne
 COPY ["src/ConnectSphere.Notif.API/ConnectSphere.Notif.API.csproj", "src/ConnectSphere.Notif.API/"]
 COPY ["src/ConnectSphere.Feed.API/ConnectSphere.Feed.API.csproj", "src/ConnectSphere.Feed.API/"]
 COPY ["src/ConnectSphere.Gateway/ConnectSphere.Gateway.csproj", "src/ConnectSphere.Gateway/"]
-COPY ["shared/ConnectSphere.Shared/ConnectSphere.Shared.csproj", "shared/ConnectSphere.Shared/"]
+COPY ["Shared/ConnectSphere.Shared/ConnectSphere.Shared.csproj", "Shared/ConnectSphere.Shared/"]
 
 # Restore the specific project (and its dependencies)
 RUN dotnet restore "src/${PROJECT_NAME}/${PROJECT_NAME}.csproj"
