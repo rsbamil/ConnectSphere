@@ -22,8 +22,8 @@ COPY ["src/ConnectSphere.Feed.API/ConnectSphere.Feed.API.csproj", "src/ConnectSp
 COPY ["src/ConnectSphere.Gateway/ConnectSphere.Gateway.csproj", "src/ConnectSphere.Gateway/"]
 COPY ["shared/ConnectSphere.Shared/ConnectSphere.Shared.csproj", "shared/ConnectSphere.Shared/"]
 
-# 2. RENAME 'shared' to 'Shared' at the root level (/src/Shared)
-RUN if [ -d "shared" ]; then mv shared Shared; fi
+# 2. CREATE A SYMBOLIC LINK TO HANDLE BOTH 'shared' AND 'Shared'
+RUN ln -s shared Shared
 
 # 3. Restore dependencies
 RUN dotnet restore "src/${PROJECT_NAME}/${PROJECT_NAME}.csproj"
@@ -31,8 +31,8 @@ RUN dotnet restore "src/${PROJECT_NAME}/${PROJECT_NAME}.csproj"
 # 4. Copy the rest of the source code
 COPY . .
 
-# 5. Fix casing again after bulk copy
-RUN if [ -d "shared" ]; then cp -r shared/* Shared/ && rm -rf shared; fi
+# 5. Ensure the symbolic link is still there after bulk copy
+RUN if [ ! -L "Shared" ]; then ln -sf shared Shared; fi
 
 WORKDIR "/src/src/${PROJECT_NAME}"
 RUN dotnet build "${PROJECT_NAME}.csproj" -c $BUILD_CONFIGURATION -o /app/build
