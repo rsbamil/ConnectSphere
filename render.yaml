@@ -27,10 +27,11 @@ services:
         value: http://cs-feed-service:8080
 
   # ── AUTH SERVICE ────────────────────────────────────────────────────────────
-  - type: pserv
+  - type: web
     name: cs-auth-service
     runtime: docker
     dockerfilePath: Dockerfile
+    plan: free
     envVars:
       - key: PROJECT_NAME
         value: ConnectSphere.Auth.API
@@ -42,10 +43,11 @@ services:
         sync: false # Set from your .env
 
   # ── POST SERVICE ────────────────────────────────────────────────────────────
-  - type: pserv
+  - type: web
     name: cs-post-service
     runtime: docker
     dockerfilePath: Dockerfile
+    plan: free
     envVars:
       - key: PROJECT_NAME
         value: ConnectSphere.Post.API
@@ -55,10 +57,11 @@ services:
         sync: false # Set this to your Upstash REDIS_URL
 
   # ── LIKE SERVICE ────────────────────────────────────────────────────────────
-  - type: pserv
+  - type: web
     name: cs-like-service
     runtime: docker
     dockerfilePath: Dockerfile
+    plan: free
     envVars:
       - key: PROJECT_NAME
         value: ConnectSphere.Like.API
@@ -66,10 +69,11 @@ services:
         sync: false
 
   # ── COMMENT SERVICE ─────────────────────────────────────────────────────────
-  - type: pserv
+  - type: web
     name: cs-comment-service
     runtime: docker
     dockerfilePath: Dockerfile
+    plan: free
     envVars:
       - key: PROJECT_NAME
         value: ConnectSphere.Comment.API
@@ -77,10 +81,11 @@ services:
         sync: false
 
   # ── FOLLOW SERVICE ──────────────────────────────────────────────────────────
-  - type: pserv
+  - type: web
     name: cs-follow-service
     runtime: docker
     dockerfilePath: Dockerfile
+    plan: free
     envVars:
       - key: PROJECT_NAME
         value: ConnectSphere.Follow.API
@@ -88,10 +93,11 @@ services:
         sync: false
 
   # ── NOTIF SERVICE ───────────────────────────────────────────────────────────
-  - type: pserv
+  - type: web
     name: cs-notif-service
     runtime: docker
     dockerfilePath: Dockerfile
+    plan: free
     envVars:
       - key: PROJECT_NAME
         value: ConnectSphere.Notif.API
@@ -99,10 +105,11 @@ services:
         sync: false
 
   # ── FEED SERVICE ────────────────────────────────────────────────────────────
-  - type: pserv
+  - type: web
     name: cs-feed-service
     runtime: docker
     dockerfilePath: Dockerfile
+    plan: free
     envVars:
       - key: PROJECT_NAME
         value: ConnectSphere.Feed.API
