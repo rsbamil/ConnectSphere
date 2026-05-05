@@ -5,7 +5,7 @@ services:
     runtime: docker
     dockerfilePath: Dockerfile
     dockerContext: .
-    dockerCommand: ""
+    dockerCommand: "" # Uses ENTRYPOINT from Dockerfile
     plan: free
     envVars:
       - key: PROJECT_NAME
@@ -39,11 +39,11 @@ services:
       - key: ASPNETCORE_URLS
         value: http://+:8080
       - key: ConnectionStrings__DefaultConnection
-        sync: false
+        sync: false # Set this to your Neon DATABASE_URL
       - key: JwtSettings__Secret
         generateValue: true
       - key: Google__ClientId
-        sync: false
+        sync: false # Set from your .env
 
   # ── POST SERVICE ────────────────────────────────────────────────────────────
   - type: web
@@ -57,9 +57,9 @@ services:
       - key: ASPNETCORE_URLS
         value: http://+:8080
       - key: ConnectionStrings__DefaultConnection
-        sync: false
+        sync: false # Set this to your Neon DATABASE_URL
       - key: Redis__ConnectionString
-        sync: false
+        sync: false # Set this to your Upstash REDIS_URL
 
   # ── LIKE SERVICE ────────────────────────────────────────────────────────────
   - type: web
@@ -144,7 +144,8 @@ services:
         destination: /index.html
     envVars:
       - key: VITE_GOOGLE_CLIENT_ID
-        sync: false
+        sync: false # Set from your .env
+      # All services point to the Gateway's public URL
       - key: VITE_AUTH_URL
         value: https://cs-gateway.onrender.com
       - key: VITE_POST_URL
