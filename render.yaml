@@ -3,8 +3,8 @@ services:
   - type: web
     name: cs-gateway
     runtime: docker
-    dockerFilePath: Dockerfile
-    dockerBuildContext: .
+    dockerfilePath: Dockerfile
+    dockerContext: .
     dockerCommand: "" # Uses ENTRYPOINT from Dockerfile
     plan: free
     envVars:
@@ -30,7 +30,7 @@ services:
   - type: pserv
     name: cs-auth-service
     runtime: docker
-    dockerFilePath: Dockerfile
+    dockerfilePath: Dockerfile
     envVars:
       - key: PROJECT_NAME
         value: ConnectSphere.Auth.API
@@ -45,7 +45,7 @@ services:
   - type: pserv
     name: cs-post-service
     runtime: docker
-    dockerFilePath: Dockerfile
+    dockerfilePath: Dockerfile
     envVars:
       - key: PROJECT_NAME
         value: ConnectSphere.Post.API
@@ -58,7 +58,7 @@ services:
   - type: pserv
     name: cs-like-service
     runtime: docker
-    dockerFilePath: Dockerfile
+    dockerfilePath: Dockerfile
     envVars:
       - key: PROJECT_NAME
         value: ConnectSphere.Like.API
@@ -69,7 +69,7 @@ services:
   - type: pserv
     name: cs-comment-service
     runtime: docker
-    dockerFilePath: Dockerfile
+    dockerfilePath: Dockerfile
     envVars:
       - key: PROJECT_NAME
         value: ConnectSphere.Comment.API
@@ -80,7 +80,7 @@ services:
   - type: pserv
     name: cs-follow-service
     runtime: docker
-    dockerFilePath: Dockerfile
+    dockerfilePath: Dockerfile
     envVars:
       - key: PROJECT_NAME
         value: ConnectSphere.Follow.API
@@ -91,7 +91,7 @@ services:
   - type: pserv
     name: cs-notif-service
     runtime: docker
-    dockerFilePath: Dockerfile
+    dockerfilePath: Dockerfile
     envVars:
       - key: PROJECT_NAME
         value: ConnectSphere.Notif.API
@@ -102,7 +102,7 @@ services:
   - type: pserv
     name: cs-feed-service
     runtime: docker
-    dockerFilePath: Dockerfile
+    dockerfilePath: Dockerfile
     envVars:
       - key: PROJECT_NAME
         value: ConnectSphere.Feed.API
