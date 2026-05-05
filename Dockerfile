@@ -11,7 +11,7 @@ ARG BUILD_CONFIGURATION=Release
 ARG PROJECT_NAME
 WORKDIR /src
 
-# Copy all .csproj files first (for caching layers)
+# 1. Copy all project files first (using lowercase shared to match disk)
 COPY ["src/ConnectSphere.Auth.API/ConnectSphere.Auth.API.csproj", "src/ConnectSphere.Auth.API/"]
 COPY ["src/ConnectSphere.Post.API/ConnectSphere.Post.API.csproj", "src/ConnectSphere.Post.API/"]
 COPY ["src/ConnectSphere.Like.API/ConnectSphere.Like.API.csproj", "src/ConnectSphere.Like.API/"]
@@ -20,14 +20,20 @@ COPY ["src/ConnectSphere.Follow.API/ConnectSphere.Follow.API.csproj", "src/Conne
 COPY ["src/ConnectSphere.Notif.API/ConnectSphere.Notif.API.csproj", "src/ConnectSphere.Notif.API/"]
 COPY ["src/ConnectSphere.Feed.API/ConnectSphere.Feed.API.csproj", "src/ConnectSphere.Feed.API/"]
 COPY ["src/ConnectSphere.Gateway/ConnectSphere.Gateway.csproj", "src/ConnectSphere.Gateway/"]
-COPY ["shared/ConnectSphere.Shared/ConnectSphere.Shared.csproj", "Shared/ConnectSphere.Shared/"]
+COPY ["shared/ConnectSphere.Shared/ConnectSphere.Shared.csproj", "shared/ConnectSphere.Shared/"]
 
-# Restore the specific project (and its dependencies)
+# 2. Rename lowercase 'shared' to uppercase 'Shared' to satisfy .NET references
+RUN if [ -d "shared" ]; then mv shared Shared; fi
+
+# 3. Restore dependencies
 RUN dotnet restore "src/${PROJECT_NAME}/${PROJECT_NAME}.csproj"
 
-# Copy the rest of the source
+# 4. Copy the rest of the source code
 COPY . .
-RUN if [ -d "shared" ]; then mv shared Shared; fi
+
+# 5. Repeat rename for the rest of the files
+RUN if [ -d "shared" ]; then mv shared temp_shared && mv temp_shared Shared; fi
+
 WORKDIR "/src/src/${PROJECT_NAME}"
 RUN dotnet build "${PROJECT_NAME}.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
