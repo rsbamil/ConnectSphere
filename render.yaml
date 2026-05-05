@@ -27,7 +27,7 @@ services:
         value: http://cs-feed-service:8080
 
   # ── AUTH SERVICE ────────────────────────────────────────────────────────────
-  - type: pvt
+  - type: pserv
     name: cs-auth-service
     runtime: docker
     dockerFilePath: Dockerfile
@@ -42,7 +42,7 @@ services:
         sync: false # Set from your .env
 
   # ── POST SERVICE ────────────────────────────────────────────────────────────
-  - type: pvt
+  - type: pserv
     name: cs-post-service
     runtime: docker
     dockerFilePath: Dockerfile
@@ -55,7 +55,7 @@ services:
         sync: false # Set this to your Upstash REDIS_URL
 
   # ── LIKE SERVICE ────────────────────────────────────────────────────────────
-  - type: pvt
+  - type: pserv
     name: cs-like-service
     runtime: docker
     dockerFilePath: Dockerfile
@@ -66,7 +66,7 @@ services:
         sync: false
 
   # ── COMMENT SERVICE ─────────────────────────────────────────────────────────
-  - type: pvt
+  - type: pserv
     name: cs-comment-service
     runtime: docker
     dockerFilePath: Dockerfile
@@ -77,7 +77,7 @@ services:
         sync: false
 
   # ── FOLLOW SERVICE ──────────────────────────────────────────────────────────
-  - type: pvt
+  - type: pserv
     name: cs-follow-service
     runtime: docker
     dockerFilePath: Dockerfile
@@ -88,7 +88,7 @@ services:
         sync: false
 
   # ── NOTIF SERVICE ───────────────────────────────────────────────────────────
-  - type: pvt
+  - type: pserv
     name: cs-notif-service
     runtime: docker
     dockerFilePath: Dockerfile
@@ -99,7 +99,7 @@ services:
         sync: false
 
   # ── FEED SERVICE ────────────────────────────────────────────────────────────
-  - type: pvt
+  - type: pserv
     name: cs-feed-service
     runtime: docker
     dockerFilePath: Dockerfile
