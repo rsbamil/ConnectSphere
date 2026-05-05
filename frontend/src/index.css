@@ -1,0 +1,99 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@700,600,500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --scrollbar-width: 6px;
+    --scrollbar-track: #111318;
+    --scrollbar-thumb: #2a2d38;
+  }
+
+  * { scrollbar-width: thin; scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track); }
+  *::-webkit-scrollbar { width: var(--scrollbar-width); }
+  *::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+  *::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
+
+  body { background-color: #0a0b0f; color: #e8eaf0; font-family: 'DM Sans', sans-serif; }
+
+  ::selection { background: #f59e0b33; color: #f59e0b; }
+}
+
+@layer components {
+  /* ── Card ── */
+  .cs-card {
+    @apply bg-cs-surface border border-cs-border rounded-2xl;
+  }
+
+  /* ── Button variants ── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl
+           bg-cs-accent text-cs-bg font-semibold text-sm
+           hover:bg-amber-400 active:scale-95
+           transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl
+           text-cs-subtle hover:text-cs-text hover:bg-cs-muted
+           font-medium text-sm transition-all duration-150;
+  }
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl
+           bg-cs-red/10 text-cs-red hover:bg-cs-red/20
+           font-medium text-sm transition-all duration-150;
+  }
+
+  /* ── Input ── */
+  .cs-input {
+    @apply w-full bg-cs-muted border border-cs-border rounded-xl px-4 py-2.5
+           text-cs-text placeholder-cs-subtle text-sm
+           focus:outline-none focus:border-cs-accent focus:ring-1 focus:ring-cs-accent/30
+           transition-colors duration-150;
+  }
+
+  /* ── Avatar ── */
+  .avatar {
+    @apply rounded-full object-cover bg-cs-muted flex-shrink-0;
+  }
+
+  /* ── Divider ── */
+  .cs-divider {
+    @apply border-t border-cs-border;
+  }
+
+  /* ── Badge ── */
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium;
+  }
+  .badge-amber  { @apply badge bg-cs-accent/10 text-cs-accent; }
+  .badge-blue   { @apply badge bg-cs-blue/10 text-cs-blue; }
+  .badge-green  { @apply badge bg-cs-green/10 text-cs-green; }
+  .badge-red    { @apply badge bg-cs-red/10 text-cs-red; }
+  .badge-purple { @apply badge bg-cs-purple/10 text-cs-purple; }
+}
+
+/* ── Animated underline on links ── */
+.link-underline {
+  background-image: linear-gradient(#f59e0b, #f59e0b);
+  background-size: 0 1px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: background-size 0.25s ease;
+}
+.link-underline:hover { background-size: 100% 1px; }
+
+/* ── Post textarea autogrow ── */
+textarea.autogrow { field-sizing: content; }
+
+/* ── Skeleton shimmer ── */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #1e2028 25%, #2a2d38 50%, #1e2028 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 6px;
+}

@@ -1,0 +1,150 @@
+services:
+  # ── API GATEWAY (The Public Entry Point) ────────────────────────────────────
+  - type: web
+    name: cs-gateway
+    runtime: docker
+    dockerFilePath: Dockerfile
+    dockerBuildContext: .
+    dockerCommand: "" # Uses ENTRYPOINT from Dockerfile
+    plan: free
+    envVars:
+      - key: PROJECT_NAME
+        value: ConnectSphere.Gateway
+      # Forwarding addresses to internal Render services
+      - key: ReverseProxy__Clusters__auth-cluster__Destinations__destination1__Address
+        value: http://cs-auth-service:8080
+      - key: ReverseProxy__Clusters__post-cluster__Destinations__destination1__Address
+        value: http://cs-post-service:8080
+      - key: ReverseProxy__Clusters__like-cluster__Destinations__destination1__Address
+        value: http://cs-like-service:8080
+      - key: ReverseProxy__Clusters__comment-cluster__Destinations__destination1__Address
+        value: http://cs-comment-service:8080
+      - key: ReverseProxy__Clusters__follow-cluster__Destinations__destination1__Address
+        value: http://cs-follow-service:8080
+      - key: ReverseProxy__Clusters__notif-cluster__Destinations__destination1__Address
+        value: http://cs-notif-service:8080
+      - key: ReverseProxy__Clusters__feed-cluster__Destinations__destination1__Address
+        value: http://cs-feed-service:8080
+
+  # ── AUTH SERVICE ────────────────────────────────────────────────────────────
+  - type: pvt
+    name: cs-auth-service
+    runtime: docker
+    dockerFilePath: Dockerfile
+    envVars:
+      - key: PROJECT_NAME
+        value: ConnectSphere.Auth.API
+      - key: ConnectionStrings__DefaultConnection
+        sync: false # Set this to your Neon DATABASE_URL
+      - key: JwtSettings__Secret
+        generateValue: true
+      - key: Google__ClientId
+        sync: false # Set from your .env
+
+  # ── POST SERVICE ────────────────────────────────────────────────────────────
+  - type: pvt
+    name: cs-post-service
+    runtime: docker
+    dockerFilePath: Dockerfile
+    envVars:
+      - key: PROJECT_NAME
+        value: ConnectSphere.Post.API
+      - key: ConnectionStrings__DefaultConnection
+        sync: false # Set this to your Neon DATABASE_URL
+      - key: Redis__ConnectionString
+        sync: false # Set this to your Upstash REDIS_URL
+
+  # ── LIKE SERVICE ────────────────────────────────────────────────────────────
+  - type: pvt
+    name: cs-like-service
+    runtime: docker
+    dockerFilePath: Dockerfile
+    envVars:
+      - key: PROJECT_NAME
+        value: ConnectSphere.Like.API
+      - key: ConnectionStrings__DefaultConnection
+        sync: false
+
+  # ── COMMENT SERVICE ─────────────────────────────────────────────────────────
+  - type: pvt
+    name: cs-comment-service
+    runtime: docker
+    dockerFilePath: Dockerfile
+    envVars:
+      - key: PROJECT_NAME
+        value: ConnectSphere.Comment.API
+      - key: ConnectionStrings__DefaultConnection
+        sync: false
+
+  # ── FOLLOW SERVICE ──────────────────────────────────────────────────────────
+  - type: pvt
+    name: cs-follow-service
+    runtime: docker
+    dockerFilePath: Dockerfile
+    envVars:
+      - key: PROJECT_NAME
+        value: ConnectSphere.Follow.API
+      - key: ConnectionStrings__DefaultConnection
+        sync: false
+
+  # ── NOTIF SERVICE ───────────────────────────────────────────────────────────
+  - type: pvt
+    name: cs-notif-service
+    runtime: docker
+    dockerFilePath: Dockerfile
+    envVars:
+      - key: PROJECT_NAME
+        value: ConnectSphere.Notif.API
+      - key: ConnectionStrings__DefaultConnection
+        sync: false
+
+  # ── FEED SERVICE ────────────────────────────────────────────────────────────
+  - type: pvt
+    name: cs-feed-service
+    runtime: docker
+    dockerFilePath: Dockerfile
+    envVars:
+      - key: PROJECT_NAME
+        value: ConnectSphere.Feed.API
+      - key: ConnectionStrings__DefaultConnection
+        sync: false
+
+  # ── FRONTEND (React Static Site) ────────────────────────────────────────────
+  - type: web
+    name: cs-frontend
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    rootDir: frontend
+    envVars:
+      - key: VITE_GOOGLE_CLIENT_ID
+        sync: false # Set from your .env
+      # All services point to the Gateway's public URL
+      - key: VITE_AUTH_URL
+        fromService:
+          name: cs-gateway
+          type: host
+      - key: VITE_POST_URL
+        fromService:
+          name: cs-gateway
+          type: host
+      - key: VITE_LIKE_URL
+        fromService:
+          name: cs-gateway
+          type: host
+      - key: VITE_COMMENT_URL
+        fromService:
+          name: cs-gateway
+          type: host
+      - key: VITE_FOLLOW_URL
+        fromService:
+          name: cs-gateway
+          type: host
+      - key: VITE_NOTIF_URL
+        fromService:
+          name: cs-gateway
+          type: host
+      - key: VITE_FEED_URL
+        fromService:
+          name: cs-gateway
+          type: host
