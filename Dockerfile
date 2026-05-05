@@ -42,4 +42,4 @@ WORKDIR /app
 COPY --from=publish /app/publish .
 ARG PROJECT_NAME
 ENV DLL_NAME=${PROJECT_NAME}.dll
-ENTRYPOINT dotnet $DLL_NAME
+ENTRYPOINT ["sh", "-c", "dotnet $DLL_NAME"]

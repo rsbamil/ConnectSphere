@@ -123,28 +123,28 @@ services:
       - key: VITE_AUTH_URL
         fromService:
           name: cs-gateway
-          type: host
+          property: url
       - key: VITE_POST_URL
         fromService:
           name: cs-gateway
-          type: host
+          property: url
       - key: VITE_LIKE_URL
         fromService:
           name: cs-gateway
-          type: host
+          property: url
       - key: VITE_COMMENT_URL
         fromService:
           name: cs-gateway
-          type: host
+          property: url
       - key: VITE_FOLLOW_URL
         fromService:
           name: cs-gateway
-          type: host
+          property: url
       - key: VITE_NOTIF_URL
         fromService:
           name: cs-gateway
-          type: host
+          property: url
       - key: VITE_FEED_URL
         fromService:
           name: cs-gateway
-          type: host
+          property: url
