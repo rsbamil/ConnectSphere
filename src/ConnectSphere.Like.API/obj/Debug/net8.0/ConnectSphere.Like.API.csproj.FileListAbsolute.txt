@@ -252,3 +252,4 @@ D:\ConnectSphere - Copy\src\ConnectSphere.Like.API\obj\Debug\net8.0\refint\Conne
 D:\ConnectSphere - Copy\src\ConnectSphere.Like.API\obj\Debug\net8.0\ConnectSphere.Like.API.pdb
 D:\ConnectSphere - Copy\src\ConnectSphere.Like.API\obj\Debug\net8.0\ConnectSphere.Like.API.genruntimeconfig.cache
 D:\ConnectSphere - Copy\src\ConnectSphere.Like.API\obj\Debug\net8.0\ref\ConnectSphere.Like.API.dll
+D:\ConnectSphere\src\ConnectSphere.Like.API\obj\Debug\net8.0\ConnectSphere.Like.API.sourcelink.json

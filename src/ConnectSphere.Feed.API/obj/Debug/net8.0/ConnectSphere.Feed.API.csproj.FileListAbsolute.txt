@@ -268,3 +268,4 @@ D:\ConnectSphere - Copy\src\ConnectSphere.Feed.API\obj\Debug\net8.0\refint\Conne
 D:\ConnectSphere - Copy\src\ConnectSphere.Feed.API\obj\Debug\net8.0\ConnectSphere.Feed.API.pdb
 D:\ConnectSphere - Copy\src\ConnectSphere.Feed.API\obj\Debug\net8.0\ConnectSphere.Feed.API.genruntimeconfig.cache
 D:\ConnectSphere - Copy\src\ConnectSphere.Feed.API\obj\Debug\net8.0\ref\ConnectSphere.Feed.API.dll
+D:\ConnectSphere\src\ConnectSphere.Feed.API\obj\Debug\net8.0\ConnectSphere.Feed.API.sourcelink.json

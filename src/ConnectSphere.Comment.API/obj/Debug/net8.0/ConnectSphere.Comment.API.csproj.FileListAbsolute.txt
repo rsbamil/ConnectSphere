@@ -252,3 +252,4 @@ D:\ConnectSphere - Copy\src\ConnectSphere.Comment.API\obj\Debug\net8.0\refint\Co
 D:\ConnectSphere - Copy\src\ConnectSphere.Comment.API\obj\Debug\net8.0\ConnectSphere.Comment.API.pdb
 D:\ConnectSphere - Copy\src\ConnectSphere.Comment.API\obj\Debug\net8.0\ConnectSphere.Comment.API.genruntimeconfig.cache
 D:\ConnectSphere - Copy\src\ConnectSphere.Comment.API\obj\Debug\net8.0\ref\ConnectSphere.Comment.API.dll
+D:\ConnectSphere\src\ConnectSphere.Comment.API\obj\Debug\net8.0\ConnectSphere.Comment.API.sourcelink.json

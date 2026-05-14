@@ -252,3 +252,4 @@ D:\ConnectSphere - Copy\src\ConnectSphere.Follow.API\obj\Debug\net8.0\refint\Con
 D:\ConnectSphere - Copy\src\ConnectSphere.Follow.API\obj\Debug\net8.0\ConnectSphere.Follow.API.pdb
 D:\ConnectSphere - Copy\src\ConnectSphere.Follow.API\obj\Debug\net8.0\ConnectSphere.Follow.API.genruntimeconfig.cache
 D:\ConnectSphere - Copy\src\ConnectSphere.Follow.API\obj\Debug\net8.0\ref\ConnectSphere.Follow.API.dll
+D:\ConnectSphere\src\ConnectSphere.Follow.API\obj\Debug\net8.0\ConnectSphere.Follow.API.sourcelink.json

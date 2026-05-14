@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JkP23oy8EK8=",
+  "dgSpecHash": "ZtuFWDB7gg8=",
   "success": true,
-  "projectFilePath": "D:\\ConnectSphere - Copy\\src\\ConnectSphere.Auth.API\\ConnectSphere.Auth.API.csproj",
+  "projectFilePath": "D:\\ConnectSphere\\src\\ConnectSphere.Auth.API\\ConnectSphere.Auth.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rohit\\.nuget\\packages\\aspnetcore.healthchecks.npgsql\\8.0.0\\aspnetcore.healthchecks.npgsql.8.0.0.nupkg.sha512",
     "C:\\Users\\Rohit\\.nuget\\packages\\google.apis\\1.67.0\\google.apis.1.67.0.nupkg.sha512",

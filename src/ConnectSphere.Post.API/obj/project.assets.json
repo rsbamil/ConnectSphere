@@ -5061,11 +5061,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ConnectSphere - Copy\\src\\ConnectSphere.Post.API\\ConnectSphere.Post.API.csproj",
+      "projectUniqueName": "D:\\ConnectSphere\\src\\ConnectSphere.Post.API\\ConnectSphere.Post.API.csproj",
       "projectName": "ConnectSphere.Post.API",
-      "projectPath": "D:\\ConnectSphere - Copy\\src\\ConnectSphere.Post.API\\ConnectSphere.Post.API.csproj",
+      "projectPath": "D:\\ConnectSphere\\src\\ConnectSphere.Post.API\\ConnectSphere.Post.API.csproj",
       "packagesPath": "C:\\Users\\Rohit\\.nuget\\packages\\",
-      "outputPath": "D:\\ConnectSphere - Copy\\src\\ConnectSphere.Post.API\\obj\\",
+      "outputPath": "D:\\ConnectSphere\\src\\ConnectSphere.Post.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5087,8 +5087,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\ConnectSphere - Copy\\Shared\\ConnectSphere.Shared\\ConnectSphere.Shared.csproj": {
-              "projectPath": "D:\\ConnectSphere - Copy\\Shared\\ConnectSphere.Shared\\ConnectSphere.Shared.csproj"
+            "D:\\ConnectSphere\\Shared\\ConnectSphere.Shared\\ConnectSphere.Shared.csproj": {
+              "projectPath": "D:\\ConnectSphere\\Shared\\ConnectSphere.Shared\\ConnectSphere.Shared.csproj"
             }
           }
         }

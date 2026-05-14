@@ -24,3 +24,4 @@ D:\ConnectSphere - Copy\Shared\ConnectSphere.Shared\obj\Debug\net8.0\ConnectSphe
 D:\ConnectSphere - Copy\Shared\ConnectSphere.Shared\obj\Debug\net8.0\refint\ConnectSphere.Shared.dll
 D:\ConnectSphere - Copy\Shared\ConnectSphere.Shared\obj\Debug\net8.0\ConnectSphere.Shared.pdb
 D:\ConnectSphere - Copy\Shared\ConnectSphere.Shared\obj\Debug\net8.0\ref\ConnectSphere.Shared.dll
+D:\ConnectSphere\Shared\ConnectSphere.Shared\obj\Debug\net8.0\ConnectSphere.Shared.sourcelink.json

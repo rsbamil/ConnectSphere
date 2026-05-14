@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NMmEnKFsJns=",
+  "dgSpecHash": "Rk0tEPukbhE=",
   "success": true,
-  "projectFilePath": "D:\\ConnectSphere - Copy\\src\\ConnectSphere.Post.API\\ConnectSphere.Post.API.csproj",
+  "projectFilePath": "D:\\ConnectSphere\\src\\ConnectSphere.Post.API\\ConnectSphere.Post.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rohit\\.nuget\\packages\\aspnetcore.healthchecks.npgsql\\8.0.0\\aspnetcore.healthchecks.npgsql.8.0.0.nupkg.sha512",
     "C:\\Users\\Rohit\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

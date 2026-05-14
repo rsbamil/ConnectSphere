@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DQ9PyfYRQ/A=",
+  "dgSpecHash": "S6PFnPh74UA=",
   "success": true,
-  "projectFilePath": "D:\\ConnectSphere - Copy\\src\\ConnectSphere.Gateway\\ConnectSphere.Gateway.csproj",
+  "projectFilePath": "D:\\ConnectSphere\\src\\ConnectSphere.Gateway\\ConnectSphere.Gateway.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rohit\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.0\\microsoft.aspnetcore.authentication.jwtbearer.8.0.0.nupkg.sha512",
     "C:\\Users\\Rohit\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.0.3\\microsoft.identitymodel.abstractions.7.0.3.nupkg.sha512",

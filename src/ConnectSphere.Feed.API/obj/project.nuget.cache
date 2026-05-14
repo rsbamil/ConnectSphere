@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s8qmmKWwNqM=",
+  "dgSpecHash": "/SfZ5S5KxzY=",
   "success": true,
-  "projectFilePath": "D:\\ConnectSphere - Copy\\src\\ConnectSphere.Feed.API\\ConnectSphere.Feed.API.csproj",
+  "projectFilePath": "D:\\ConnectSphere\\src\\ConnectSphere.Feed.API\\ConnectSphere.Feed.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rohit\\.nuget\\packages\\aspnetcore.healthchecks.npgsql\\8.0.0\\aspnetcore.healthchecks.npgsql.8.0.0.nupkg.sha512",
     "C:\\Users\\Rohit\\.nuget\\packages\\aspnetcore.healthchecks.redis\\8.0.0\\aspnetcore.healthchecks.redis.8.0.0.nupkg.sha512",

@@ -252,3 +252,4 @@ D:\ConnectSphere - Copy\src\ConnectSphere.Notif.API\obj\Debug\net8.0\refint\Conn
 D:\ConnectSphere - Copy\src\ConnectSphere.Notif.API\obj\Debug\net8.0\ConnectSphere.Notif.API.pdb
 D:\ConnectSphere - Copy\src\ConnectSphere.Notif.API\obj\Debug\net8.0\ConnectSphere.Notif.API.genruntimeconfig.cache
 D:\ConnectSphere - Copy\src\ConnectSphere.Notif.API\obj\Debug\net8.0\ref\ConnectSphere.Notif.API.dll
+D:\ConnectSphere\src\ConnectSphere.Notif.API\obj\Debug\net8.0\ConnectSphere.Notif.API.sourcelink.json

@@ -290,3 +290,4 @@ D:\ConnectSphere - Copy\src\ConnectSphere.Post.API\obj\Debug\net8.0\refint\Conne
 D:\ConnectSphere - Copy\src\ConnectSphere.Post.API\obj\Debug\net8.0\ConnectSphere.Post.API.pdb
 D:\ConnectSphere - Copy\src\ConnectSphere.Post.API\obj\Debug\net8.0\ConnectSphere.Post.API.genruntimeconfig.cache
 D:\ConnectSphere - Copy\src\ConnectSphere.Post.API\obj\Debug\net8.0\ref\ConnectSphere.Post.API.dll
+D:\ConnectSphere\src\ConnectSphere.Post.API\obj\Debug\net8.0\ConnectSphere.Post.API.sourcelink.json
