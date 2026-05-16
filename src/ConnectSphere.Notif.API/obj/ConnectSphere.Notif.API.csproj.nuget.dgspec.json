@@ -4,14 +4,14 @@
     "D:\\ConnectSphere\\src\\ConnectSphere.Notif.API\\ConnectSphere.Notif.API.csproj": {}
   },
   "projects": {
-    "D:\\ConnectSphere\\shared\\ConnectSphere.Shared\\ConnectSphere.Shared.csproj": {
+    "D:\\ConnectSphere\\Shared\\ConnectSphere.Shared\\ConnectSphere.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ConnectSphere\\shared\\ConnectSphere.Shared\\ConnectSphere.Shared.csproj",
+        "projectUniqueName": "D:\\ConnectSphere\\Shared\\ConnectSphere.Shared\\ConnectSphere.Shared.csproj",
         "projectName": "ConnectSphere.Shared",
-        "projectPath": "D:\\ConnectSphere\\shared\\ConnectSphere.Shared\\ConnectSphere.Shared.csproj",
+        "projectPath": "D:\\ConnectSphere\\Shared\\ConnectSphere.Shared\\ConnectSphere.Shared.csproj",
         "packagesPath": "C:\\Users\\Rohit\\.nuget\\packages\\",
-        "outputPath": "D:\\ConnectSphere\\shared\\ConnectSphere.Shared\\obj\\",
+        "outputPath": "D:\\ConnectSphere\\Shared\\ConnectSphere.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -99,8 +99,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\ConnectSphere\\shared\\ConnectSphere.Shared\\ConnectSphere.Shared.csproj": {
-                "projectPath": "D:\\ConnectSphere\\shared\\ConnectSphere.Shared\\ConnectSphere.Shared.csproj"
+              "D:\\ConnectSphere\\Shared\\ConnectSphere.Shared\\ConnectSphere.Shared.csproj": {
+                "projectPath": "D:\\ConnectSphere\\Shared\\ConnectSphere.Shared\\ConnectSphere.Shared.csproj"
               }
             }
           }

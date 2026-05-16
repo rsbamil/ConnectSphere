@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConnectSphere.Comment.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+efacc33944aade4aad2222adda10e655eb9ceac8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f971a21c69324d094b0a63cff76478304df8ec2")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConnectSphere.Comment.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConnectSphere.Comment.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -4216,8 +4216,8 @@
     },
     "ConnectSphere.Shared/1.0.0": {
       "type": "project",
-      "path": "../../shared/ConnectSphere.Shared/ConnectSphere.Shared.csproj",
-      "msbuildProject": "../../shared/ConnectSphere.Shared/ConnectSphere.Shared.csproj"
+      "path": "../../Shared/ConnectSphere.Shared/ConnectSphere.Shared.csproj",
+      "msbuildProject": "../../Shared/ConnectSphere.Shared/ConnectSphere.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4269,8 +4269,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\ConnectSphere\\shared\\ConnectSphere.Shared\\ConnectSphere.Shared.csproj": {
-              "projectPath": "D:\\ConnectSphere\\shared\\ConnectSphere.Shared\\ConnectSphere.Shared.csproj"
+            "D:\\ConnectSphere\\Shared\\ConnectSphere.Shared\\ConnectSphere.Shared.csproj": {
+              "projectPath": "D:\\ConnectSphere\\Shared\\ConnectSphere.Shared\\ConnectSphere.Shared.csproj"
             }
           }
         }

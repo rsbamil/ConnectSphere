@@ -150,23 +150,24 @@ try
     // ── Migration ─────────────────────────────────────────────
     using (var scope = app.Services.CreateScope())
     {
-        try
+        var db = scope.ServiceProvider.GetRequiredService<LikeDbContext>();
+        int retries = 5;
+        while (retries > 0)
         {
-            Console.WriteLine("10 Starting migration");
-
-            var db = scope.ServiceProvider.GetRequiredService<LikeDbContext>();
-
-            db.Database.Migrate();
-
-            Console.WriteLine("11 Migration completed");
-
-            Log.Information("Like database migration applied.");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Migration failed");
-
-            Log.Warning(ex, "Database migration skipped.");
+            try
+            {
+                Console.WriteLine($"Migration attempt {6 - retries}");
+                db.Database.Migrate();
+                Log.Information("Like database migration applied.");
+                break;
+            }
+            catch (Exception ex)
+            {
+                retries--;
+                if (retries == 0) throw;
+                Log.Warning(ex, "Like database migration failed. Retrying in 5 seconds... ({Retries} attempts left)", retries);
+                Thread.Sleep(5000);
+            }
         }
     }
 

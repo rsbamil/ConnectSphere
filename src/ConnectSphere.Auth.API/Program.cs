@@ -93,12 +93,31 @@ try
 
     var app = builder.Build();
 
-    // ── Auto-migrate on startup ────────────────────────────────────────────────
+    // ── Auto-migrate on startup with Retry Logic ──────────────────────────────
     using (var scope = app.Services.CreateScope())
     {
         var db = scope.ServiceProvider.GetRequiredService<AuthDbContext>();
-        db.Database.Migrate();
-        Log.Information("Auth database migration applied.");
+        int retries = 5;
+        while (retries > 0)
+        {
+            try
+            {
+                db.Database.Migrate();
+                Log.Information("Auth database migration applied.");
+                break;
+            }
+            catch (Exception ex)
+            {
+                retries--;
+                if (retries == 0)
+                {
+                    Log.Fatal(ex, "Auth database migration failed after multiple attempts.");
+                    throw;
+                }
+                Log.Warning("Auth database migration failed. Retrying in 5 seconds... ({Retries} attempts left)", retries);
+                Thread.Sleep(5000);
+            }
+        }
     }
 
     app.UseSerilogRequestLogging();

@@ -62,7 +62,23 @@ try
     using (var scope = app.Services.CreateScope())
     {
         var db = scope.ServiceProvider.GetRequiredService<FollowDbContext>();
-        db.Database.Migrate();
+        int retries = 5;
+        while (retries > 0)
+        {
+            try
+            {
+                db.Database.Migrate();
+                Log.Information("Follow database migration applied.");
+                break;
+            }
+            catch (Exception ex)
+            {
+                retries--;
+                if (retries == 0) throw;
+                Log.Warning("Follow database migration failed. Retrying in 5 seconds... ({Retries} attempts left)", retries);
+                Thread.Sleep(5000);
+            }
+        }
     }
 
     app.UseSerilogRequestLogging();

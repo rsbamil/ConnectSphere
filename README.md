@@ -51,4 +51,3 @@ UPDATE auth_users SET "IsAdmin" = true WHERE "Email" = 'you@example.com';
 **Frontend:** Render Static Site → `frontend/` folder → set `VITE_*` service URLs.
 
 See `src/README.md` and `frontend/README.md` for full details.
-"# ConnectSphere" 

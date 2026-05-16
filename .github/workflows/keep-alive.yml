@@ -1,0 +1,30 @@
+name: Keep Services Awake
+
+on:
+  schedule:
+    # Runs every 10 minutes
+    - cron: '*/10 * * * *'
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  ping-services:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render Services
+        run: |
+          SERVICES=(
+            "https://cs-gateway.onrender.com/health"
+            "https://cs-auth-service.onrender.com/health"
+            "https://cs-post-service.onrender.com/health"
+            "https://cs-like-service.onrender.com/health"
+            "https://cs-comment-service.onrender.com/health"
+            "https://cs-follow-service.onrender.com/health"
+            "https://cs-notif-service.onrender.com/health"
+            "https://cs-feed-service.onrender.com/health"
+          )
+          
+          for url in "${SERVICES[@]}"; do
+            echo "Pinging $url..."
+            curl -s -o /dev/null -w "%{http_code}" "$url"
+            echo ""
+          done
