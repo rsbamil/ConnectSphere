@@ -1,4 +1,7 @@
 import axios from 'axios'
+import { toast } from 'react-hot-toast'
+
+let isWakingUpToastShown = false;
 
 // ── Axios instances — one per microservice ────────────────────────────────────
 // Local dev: Vite proxy in vite.config.js routes /api/* to correct port
@@ -28,7 +31,41 @@ function makeClient(baseURL, { redirectOn401 = false } = {}) {
 
   client.interceptors.response.use(
     r => r,
-    err => {
+    async err => {
+      const config = err.config;
+      
+      if (config) {
+        config.__retryCount = config.__retryCount || 0;
+        const maxRetries = 5;
+
+        // Render cold starts often result in Network Errors (timeout/no response) or 502/503/504
+        const isRetryableError =
+          !err.response ||
+          err.response.status === 502 ||
+          err.response.status === 503 ||
+          err.response.status === 504;
+
+        if (isRetryableError && config.__retryCount < maxRetries) {
+          config.__retryCount += 1;
+          
+          if (!isWakingUpToastShown) {
+            isWakingUpToastShown = true;
+            toast('Waking up services... this may take a minute ⏳', {
+              duration: 8000,
+              style: { background: '#333', color: '#fff', borderRadius: '8px' }
+            });
+            // Allow the toast to be shown again after 20 seconds
+            setTimeout(() => { isWakingUpToastShown = false; }, 20000);
+          }
+
+          // Exponential backoff: 2s, 4s, 8s, 16s, 32s (total ~62 seconds wait time)
+          const backoff = Math.pow(2, config.__retryCount) * 1000;
+          await new Promise(resolve => setTimeout(resolve, backoff));
+          
+          return client(config);
+        }
+      }
+
       if (redirectOn401 && err.response?.status === 401) {
         localStorage.removeItem('cs_token')
         localStorage.removeItem('cs_user')

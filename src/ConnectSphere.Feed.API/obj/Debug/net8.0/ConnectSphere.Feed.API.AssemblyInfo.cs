@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConnectSphere.Feed.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f971a21c69324d094b0a63cff76478304df8ec2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d6f4a35041499b42859c15e0d15360845647859")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConnectSphere.Feed.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConnectSphere.Feed.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
