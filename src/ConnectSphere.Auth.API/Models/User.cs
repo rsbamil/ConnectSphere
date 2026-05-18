@@ -35,7 +35,6 @@ public class User
     [MaxLength(500)]
     public string? Bio { get; set; }
 
-    // Azure Blob SAS URL or null if no avatar uploaded
     public string? AvatarUrl { get; set; }
 
     // When true, follow requests go PENDING until approved
